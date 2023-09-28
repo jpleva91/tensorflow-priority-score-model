@@ -44,7 +44,7 @@ Key metrics after training the model:
 
 ## How It Works
 
-1. **Data Generation:** Synthetic data is generated to simulate patient statuses and other module statuses over a period of a year.
+1. **Data Generation:** Synthetic data is generated to simulate record statuses and other record child statuses over a period of a year.
 2. **Weight Assignment:** Weights are assigned to each status based on their importance.
 3. **Feature Engineering:** The data is then processed to calculate weighted features which are used to predict the attention score.
 4. **Model Training:** A TensorFlow model is trained on the processed data.
