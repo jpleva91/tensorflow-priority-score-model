@@ -8,7 +8,7 @@ from sklearn.metrics import r2_score
 np.random.seed(42)
 
 # Generate synthetic data
-num_samples = 1000
+num_samples = 10000
 parent_status = np.random.randint(0, 4, num_samples)  # Status ranging from 0 to 3
 child1_status = np.random.randint(0, 4, num_samples)
 child2_status = np.random.randint(0, 4, num_samples)
@@ -74,7 +74,11 @@ train_labels, test_labels = attention_scores[:800], attention_scores[800:]
 model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=(7,)),
     tf.keras.layers.Dense(10, activation='relu'),
-    tf.keras.layers.Dense(1, activation='sigmoid')
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.Dense(10, activation='tanh'),
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.Dense(10, activation='swish'),
+    tf.keras.layers.Dense(1)
 ])
 model.compile(optimizer='adam', loss='mse', metrics=['mae'])
 
