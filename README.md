@@ -1,4 +1,4 @@
-# Patient Attention Score Prediction
+# Priority Attention Score Prediction
 
 This project aims to predict an "Priority Score" for patients based on a variety of factors such as the days since their last visit, their status, and the statuses of various modules. The higher the attention score, the more attention the patient might require from medical staff.
 
