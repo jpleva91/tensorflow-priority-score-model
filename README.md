@@ -4,7 +4,7 @@ This project aims to predict an "Priority Score" for data based on a variety of 
 
 ## Overview
 
-Using a synthetic dataset, we predict the attention score by transforming categorical statuses into weighted values, combining them with other features, and training a regression model on TensorFlow. This helps in ranking patients based on the predicted urgency of their requirements.
+Using a synthetic dataset, we predict the attention score by transforming categorical statuses into weighted values, combining them with other features, and training a regression model on TensorFlow. This helps in ranking records based on the predicted urgency of their requirements.
 
 ## Key Results
 |Creation Date|Days Since Creation|Parent Status|Child1 Status|Child2 Status|Child3 Status|Child4 Status|Child5 Status|Weighted Days Since Creation|Weighted Parent Status|Weighted Child1 Status|Weighted Child2 Status|Weighted Child3 Status|Weighted Child4 Status|Weighted Child5 Status|Priority Score (Attention Score)|Predicted Priority Score|
