@@ -67,17 +67,15 @@ attention_scores = (combined_scores - combined_scores.min()) / (combined_scores.
 data = np.column_stack((weighted_days_since, weighted_parent_status, weighted_child1_status, weighted_child2_status, weighted_child3_status, weighted_child4_status, weighted_child5_status))
 
 # Split the dataset into training and testing sets
-train_data, test_data = data[:800], data[800:]
-train_labels, test_labels = attention_scores[:800], attention_scores[800:]
+train_data, test_data = data[:8000], data[8000:]
+train_labels, test_labels = attention_scores[:8000], attention_scores[8000:]
 
 # Define and compile the TensorFlow model
 model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=(7,)),
     tf.keras.layers.Dense(10, activation='relu'),
     tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(10, activation='tanh'),
-    tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(10, activation='swish'),
+    tf.keras.layers.Dense(10, activation='relu'),
     tf.keras.layers.Dense(1)
 ])
 model.compile(optimizer='adam', loss='mse', metrics=['mae'])
